@@ -1,1 +1,6 @@
-<h>Main Page</h>
+<hr>
+<h1>Main Page</h1>
+
+<% @posts.each do |p| %>
+  <h2><%= p.title %><h2>
+<% end %>
