@@ -35,7 +35,9 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'database_cleaner-active_record'
+  gem 'devise'
   gem 'factory_bot_rails'
+  gem 'jquery-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'rubocop', require: false
@@ -43,7 +45,6 @@ group :development, :test do
   gem 'rubocop-rspec', require: false
   gem 'selenium-webdriver'
   gem 'simplecov'
-  gem 'jquery-rails'
 end
 
 group :development do
