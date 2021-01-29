@@ -43,6 +43,7 @@ group :development, :test do
   gem 'rubocop-rspec', require: false
   gem 'selenium-webdriver'
   gem 'simplecov'
+  gem 'jquery-rails'
 end
 
 group :development do
