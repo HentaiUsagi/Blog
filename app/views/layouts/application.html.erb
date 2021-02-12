@@ -13,18 +13,38 @@
     <div class="container">
       <nav class="navbar navbar-dark" style="background-color: #e3f2fd;"> 
         <ul class="nav">
-          <li class="nav-item active"><a class="nav-link text-dark" href="<%= posts_path %>">Home</a></li>       
-          <li class="nav-item disabled"><a class="nav-link text-dark" href="#">Something</a></li> 
+          <li class="nav-item active">
+            <a class="nav-link text-dark" href="<%= posts_path %>">Home</a>
+          </li>       
+          <li class="nav-item disabled">
+            <a class="nav-link text-dark" href="#">Something</a>
+          </li> 
         </ul>
-        <%= link_to 'New Post', new_post_path, class: 'btn btn-outline-primary float-md-right' %>
+
+        <ul class="nav">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to 'New Post', new_post_path, class: 'btn btn-outline-primary float-md-right' %>
+            </li>
+            <li>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link text-dark float-md-right" %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign in", new_user_session_path, class: "nav-link text-dark float-md-right float-md-right" %>
+            </li>
+            <li>
+              <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-dark float-md-right" %>
+            </li>
+          <% end %>
+        </ul>
       </nav>
     </div>
 
     <div class="container main">
       <%= yield %>
     </div>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
+
+  
 </html>
