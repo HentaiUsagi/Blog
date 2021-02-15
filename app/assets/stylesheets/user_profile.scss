@@ -1,0 +1,16 @@
+// Place all the styles related to the user_profile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+article.user-profile {
+  margin-bottom: 1em;
+  padding: 1em 0;
+  
+  h1, h2 {
+    margin-bottom: 0;
+  }
+
+  section.user-profile-body {
+    padding-top: 1em;
+  }
+}

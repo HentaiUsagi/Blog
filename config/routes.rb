@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'hello/index'
   get 'posts/index' => 'posts#index'
   resources :posts
+  resources :user_profile
 end
