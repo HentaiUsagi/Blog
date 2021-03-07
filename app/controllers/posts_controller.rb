@@ -3,16 +3,20 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    authorize @posts
   end
 
   def show; end
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
+    authorize @post
 
     if @post.save
       redirect_to @post
@@ -40,9 +44,10 @@ class PostsController < ApplicationController
 
   def find_post
     @post = Post.find(params[:id])
+    authorize @post
   end
 
   def post_params
-    params.require(:post).permit(:title, :summary, :body)
+    params.require(:post).permit(:title, :summary, :body, :user_id)
   end
 end

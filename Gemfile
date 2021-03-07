@@ -38,6 +38,7 @@ group :development, :test do
   gem 'devise'
   gem 'factory_bot_rails'
   gem 'jquery-rails'
+  gem 'pundit'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'rubocop', require: false
