@@ -39,7 +39,6 @@ RSpec.describe 'Account Action', type: :feature do
     end
   end
 
-
   describe 'User create new post' do
     let(:r_fill) do
       visit '/users/sign_up'
@@ -123,5 +122,4 @@ RSpec.describe 'Account Action', type: :feature do
       expect(page).to have_current_path('/posts')
     end
   end
-
 end
